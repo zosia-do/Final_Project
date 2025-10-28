@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <main>
+        <!-- headings -->
+        <h1 class="is-darkblue">Hello, Zofia</h1>
+        <h2 class="is-darkblue">Your air quality</h2>
+
+        <!-- div for grouping elements -->
+         <!-- giving the div an id -->
+        <div id="container">
+            <p class="is-darkblue">Bedroom</p>
+            <p class="is-darkblue">Livingroom</p>
+            <p class="is-darkblue">Kitchen</p>
+            <p class="is-darkblue">Bathroom</p>
+        </div>
+        <div class="ring">
+            <div class="ring_center">
+                <strong class="is-darkblue">Good</strong>
+                <p class="is-darkblue"><i data-lucide="thermometer"></i>24.5°C</p>
+                <p class="is-darkblue"><i data-lucide="droplet"></i> 65%</p>
+            </div>
+        </div>
+
+        <!-- 'i' stands for in line -->
+        <!-- <i data-lucide="send"></i> -->
+    </main>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+    lucide.createIcons();
+    </script>
+</body>
+</html>
