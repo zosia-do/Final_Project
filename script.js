@@ -1,5 +1,5 @@
  document.addEventListener("DOMContentLoaded", function(){
-     const IO = new AdafruitIO("zosia_do", "aio_ACyC98vYZHV1ZuavQ1rlZXRUKoOQ");
+     const IO = new AdafruitIO(username, key);
     const temperatureFeed = "temperature";
     const humidityFeed = "humidity";
     const co2Feed = "co2";
