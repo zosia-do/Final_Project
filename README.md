@@ -7,6 +7,7 @@ The final assigment for the Designing with Web and Connecting with IoT courses.
 A schematic view of the projects circuit
 
 ### Images of working project
+![project](images/working_project.png)
 
 ### Video
 
