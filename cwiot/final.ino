@@ -111,9 +111,6 @@ void loop() {
 
 }
 
-// this function is called whenever an 'digital' feed message
-// is received from Adafruit IO. it was attached to
-// the 'digital' feed in the setup() function above.
 void handleMessage(AdafruitIO_Data *data) {
   Serial.print("received <- ");
   Serial.println(data->toString());

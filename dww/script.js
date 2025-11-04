@@ -12,13 +12,15 @@
 
     const ringStatus = document.getElementById("status");
 
-    let latestTemp = null;
+    //this was suggested by claude to add variables to store the latest sensor readings. The updateRing() function needs access to current temp/humidity values to determine status. Previously these values weren't being passed to updateRing()
+    let latestTemp = null; 
     let latestHumidity = null;
 
     function updateTemperature() {
         IO.getData(temperatureFeed, function({ json }) {
             if (Array.isArray(json) && json.length > 0) {
                 let latest = json[0];
+                //Claude suggested to add parseFloat() to ensure we're working with numbers, not strings. Sensor data comes as strings, but we need numbers for comparison operations
                 let tempValue = parseFloat(latest.value).toFixed(1); // Round to 1 decimal
                 latestTemp = tempValue;
                 temperatureDisplay.textContent = `${tempValue} °C`;
@@ -41,6 +43,7 @@
         IO.getData(humidityFeed, function({json}){
             if(Array.isArray(json) && json.length > 0){
                 let latest=json[0];
+                //same as before
                 let humidityValue = parseFloat(latest.value).toFixed(1);
                 latestHumidity = humidityValue; 
                 humidityDisplay.textContent = `${humidityValue} %`;
@@ -60,7 +63,9 @@
 
 
     function updateRing(){
+        //Claude modified updateRing() to use stored values instead of parameters. The function was being called without any parameters (undefined values),causing all comparisons to fail and always show "Bad"
         let status = "---";
+        //Added null check before evaluating conditions. Ensures both values exist before trying to compare them
         if (latestTemp !== null && latestHumidity !== null){
              if (latestTemp >= 20 && latestTemp <= 25 && latestHumidity >= 40 && latestHumidity <= 60){
                 status = "Good";
